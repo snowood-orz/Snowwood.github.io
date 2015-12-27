@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Theme Setup</title>
+  <meta name="description" content="A simple and awesome blog theme powered by jekyll.">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <link rel="canonical" href="/theme-setup/">
+  <link rel="alternate" type="application/rss+xml" title="Leonids" href="/feed.xml" />
+</head>
+
+<body>
+  <nav class="post-navigation" role="navigation">
+  <div class="row">
+    <div class="col s5">
+      <div class="post-nav-prev">
+        
+      </div>
+    </div>
+    <div class="col s2">
+      <a href="/">
+        <div class="leonids-icon">
+          <i class="fa fa-leaf"></i>
+        </div>
+      </a>
+    </div>
+    <div class="col s5 right">
+      <div class="post-nav-next">
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+  <div class="container">
+  <div id="page">
+    <header class="page-header">
+      <h2>Theme Setup</h2>
+    </header>
+
+    <article class="page-content">
+      <h3 id="get-started">Get started</h3>
+
+<ol>
+  <li><a href="https://github.com/renyuanz/leonids/fork">Fork the repository</a>.</li>
+  <li>Clone the repository to your computer <code>git clone https://github.com/yourname/leonids</code>.</li>
+  <li>Run <code>jekyll server</code> under your leonids project.</li>
+  <li>Go to <code>http://localhost:4000</code> for your site.</li>
+</ol>
+
+<p><strong>Pro-tip:</strong></p>
+
+<p>Delete the <code>gh-pages</code> branch after cloning and start fresh by branching off <code>master</code>. There is a bunch of garbage in <code>gh-pages</code> used for the theme’s demo site that I’m guessing you won’t want.</p>
+
+<hr />
+
+<h3 id="make-it-yours">Make it yours</h3>
+
+<p>A quick checklist of the files you’ll want to edit to get up and running.</p>
+
+<h4 id="site-wide-configuration">1. Site Wide Configuration</h4>
+
+<p><code>_config.yml</code> is your friend. Open it up and personalize it. Most variables are self explanatory but here’s an explanation of each if needed:</p>
+
+<h5 id="title">Title</h5>
+
+<p>The title of your site… shocker!</p>
+
+<p>Example <code>title: My Awesome Site</code></p>
+
+<h5 id="url">Url</h5>
+
+<p>Used to generate absolute urls in <code>sitemap.xml</code>, <code>feed.xml</code>, and for generating canonical URLs in <code>&lt;head&gt;</code>. When developing locally either comment this out or use something like <code>http://localhost:4000</code> so all assets load properly. <strong>Don’t include</strong> a trailing <code>/</code>.</p>
+
+<p>Examples:</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="c1"># when you are setting up a gh-pages</span>
+<span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://renyuanz.github.io/leonids</span>
+
+<span class="c1"># when you are developing locally</span>
+<span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://localhost:4000</span>
+
+<span class="c1"># and you can leave it blank for developing</span>
+<span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span></code></pre></figure>
+
+<h4 id="new-post">2. New Post</h4>
+
+<p>Just create a markdown file named something like: <code>year-month-day-your-post-title.md</code> in the directory <code>_posts</code>, and here you go.</p>
+
+<h5 id="options">Options</h5>
+
+<p>When writing a post, there are serval options you can add to the header.</p>
+
+<p>Example:</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="c1"># these two options are obligable for each post.</span>
+<span class="l-Scalar-Plain">layout</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">post</span>
+<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&quot;Post</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">Large</span><span class="nv"> </span><span class="s">Feature</span><span class="nv"> </span><span class="s">Image</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Text&quot;</span>
+
+<span class="c1"># the rest is optional.</span>
+<span class="l-Scalar-Plain">excerpt</span><span class="p-Indicator">:</span> <span class="s">&quot;Custom</span><span class="nv"> </span><span class="s">written</span><span class="nv"> </span><span class="s">post</span><span class="nv"> </span><span class="s">descriptions</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">way</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">go...</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">you&#39;re</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">lazy.&quot;</span> <span class="c1"># without setting this option, jekyll will take the first 160 words to be its  excerpt part.</span>
+<span class="l-Scalar-Plain">tags</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="nv">sample post</span><span class="p-Indicator">,</span> <span class="nv">readability</span><span class="p-Indicator">,</span> <span class="nv">test</span><span class="p-Indicator">]</span> <span class="c1"># tags.</span>
+<span class="l-Scalar-Plain">categories</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="nv">travel</span><span class="p-Indicator">]</span> <span class="c1"># categories.</span>
+<span class="l-Scalar-Plain">comments</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span> <span class="c1"># enable disqus comment</span>
+<span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">feature</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">sample-image-1.jpg</span> <span class="c1"># add a cover image</span>
+  <span class="l-Scalar-Plain">credit</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Greg Rakozy</span>
+  <span class="l-Scalar-Plain">creditlink</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">https://unsplash.com/photos/oMpAz-DN-9I</span></code></pre></figure>
+
+<p><strong>Pro-tip:</strong></p>
+
+<ol>
+  <li>If <code>comments</code> is set to <code>true</code>, at the end of the post there will be a disqus thread, just like this one. To use disqus, you <strong>MUST</strong> <a href="https://disqus.com">set up your own disqus account</a>.</li>
+  <li>I suggest you to set only one category for a post.</li>
+</ol>
+
+<h4 id="new-page">3. New Page</h4>
+
+<p>You can create a page by adding directly a markdown file or html file under the root path or a directory with a index page inside. You can check <a href="http://jekyllrb.com/docs/pages/">this page</a> for more details.</p>
+
+<hr />
+
+<h3 id="layouts-and-content">Layouts and Content</h3>
+
+<p>Explanations of the various <code>_layouts</code> included with the theme and when to use them.</p>
+
+<h4 id="post-and-page">Post and Page</h4>
+
+<p>These two layouts are very similar. Both have a header navigation and optional Disqus comments. The only real difference is the post layout includes cover image if you’ve set up.</p>
+
+<h4 id="post-index-page">Post Index Page</h4>
+
+<p>A <a href="/">sample index page</a> listing all posts ordered by the date they were published has been provided. The name can be customized to your liking by editing a few references.</p>
+
+<hr />
+
+<h3 id="social-sharing-links">Social Sharing Links</h3>
+
+<p>Social sharing links for Twitter, Facebook, Google+, Hacker News and Reddit are included on posts by default. If you’d like to use different social networks modify <code>_includes/social-links.html</code> to your liking. Icons are set using <a href="http://fontawesome.io">Font Awesome</a>.</p>
+
+<hr />
+
+<h3 id="further-customization">Further Customization</h3>
+
+<p>Jekyll 2.x added support for Sass files making it much easier to modify a theme’s fonts and colors. By editing values found in <code>_sass/variables.scss</code> you can fine tune the site’s colors and <code>_sass/typography.scss</code> for the site’s typography.</p>
+
+<p>For example if you wanted a red background instead of white you’d change <code>$text-color: #444;</code> to <code>$text-color: $cc0033;</code>.</p>
+
+<hr />
+
+<h3 id="the-end">The end</h3>
+
+<p>Like it? <a href="http://twitter.com/alittlered3">Tell me @renyuanz</a>.</p>
+
+<p>Problem? <a href="https://github.com/renyuanz/leonids/issues/new">Use GitHub Issues</a>.</p>
+
+<p>And if you make something cool with this theme feel free to let me know.</p>
+
+<hr />
+
+<h3 id="license">License</h3>
+
+<p>This theme is free and open source software, distributed under the MIT License. So feel free to use this Jekyll theme on your site without linking back to me or including a disclaimer.</p>
+
+    </article>
+
+
+  </div><!-- end page content -->
+
+
+  
+
+</div>
+
+  <footer>
+  &copy; 2015 Leonids. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+  <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+</body>
+</html>

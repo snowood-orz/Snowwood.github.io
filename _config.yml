@@ -1,0 +1,68 @@
+#
+###################################
+# Site wide configuration
+####################################
+#
+title: Leonids
+email: 
+description: A simple and awesome blog theme powered by jekyll.
+# the base hostname & protocol for your site
+# If your project is placed in https://github.com/yourname/yourname.github.io at master branch
+# Then, the 'url' is: http://yourname.github.io
+# If your project is placed in another repository as a gh-pages branch, like: https://github.com/yourname/projectname
+# Then, the 'url' is: http://yourname.github.io/projectname
+url: 
+
+#
+###################################
+# Jekyll configuration
+####################################
+#
+markdown:    kramdown
+highlighter:  pygments
+excerpt_separator: <!--more-->
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: Leonids
+  avatar: avatar.jpg
+  job: "PHP & Ruby Developer"
+  bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+  email:
+  disqus-shortname:
+  twitter: #username
+  facebook: #username
+  google:
+    plus: #username
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: #username
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
