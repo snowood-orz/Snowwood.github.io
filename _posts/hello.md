@@ -3,7 +3,7 @@ layout: post
 title: hello
 tags:
 - Jekyll
-categories: test
+categories: Jekyll
 description: Jekyll
 ---
 ##主题介绍
