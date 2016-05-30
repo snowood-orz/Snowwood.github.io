@@ -12,7 +12,7 @@ baseurl:
 paginate: 20
 
 # Markdown Processors
-markdown: redcarpet
+markdown: kramdown
 redcarpet:
   extensions:
     - hard_wrap
