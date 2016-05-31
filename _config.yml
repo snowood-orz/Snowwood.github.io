@@ -13,15 +13,9 @@ paginate: 20
 
 # Markdown Processors
 markdown: kramdown
-redcarpet:
-  extensions:
-    - hard_wrap
-    - no_intra_emphasis
-    - autolink
-    - strikethrough
-    - tables
-    - lax_spacing
-    - with_toc_data
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
     
 
 title : 韩 风
