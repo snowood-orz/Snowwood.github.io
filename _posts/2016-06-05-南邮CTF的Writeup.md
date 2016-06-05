@@ -11,7 +11,7 @@ description: 南邮攻防平台
 <!-- more -->
 
 先来一张图片证明
-![image](https://github.com/Snowwood/Snowwood.github.io/blob/master/assets/img/nctf.jpg?raw=true)
+![image](https://github.com/Snowwood/Snowwood.github.io/blob/master/assets/img/nctf.png?raw=true)
 
 #WEB
 
