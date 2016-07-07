@@ -24,7 +24,7 @@ redcarpet:
     - with_toc_data
 
 
-title : 韩 风
+title : Snowood's Blog
 tagline: A cool boy lost in the world 
 
 defaults:
@@ -89,7 +89,7 @@ author:
   zhihu:      ## e.g. jark  for http://www.zhihu.com/people/jark
   email:      ## e.g. imjark@gmail.com
   twitter:    ## e.g. jarkwu for https://twitter.com/jarkwu
-  github: https://github.com/Snowwood     ## e.g. wuchong for https://github.com/wuchong
+  github: Snowwood     ## e.g. wuchong for https://github.com/wuchong
   facebook:   ## e.g. imjark for https://facebook.com/imjark
   linkedin:   ## e.g. wuchong1014 for https://www.linkedin.com/in/wuchong1014
   google_plus:    ## e.g. "111190881341800841449" for https://plus.google.com/u/0/111190881341800841449, the "" is needed!
@@ -124,7 +124,7 @@ jiathis:
 google_analytics:
   enable: true
   id: UA-80366627-1       ## e.g. UA-46321946-2 your google analytics ID.
-  site:      ## e.g. wuchong.me your google analytics site or set the value as auto.
+  site: http://snowwood.github.io/     ## e.g. wuchong.me your google analytics site or set the value as auto.
 ## You MUST upgrade to Universal Analytics first!
 ## https://developers.google.com/analytics/devguides/collection/upgrade/?hl=zh_CN
 baidu_tongji:
