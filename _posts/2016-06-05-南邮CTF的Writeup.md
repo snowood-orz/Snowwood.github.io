@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 南邮平台Writeup
+title: 南邮CTF平台Writeup
 tags:
 - Writeup
 categories: Writeup
@@ -551,4 +551,83 @@ else:
 ```
 
 
+###骚年来一发吗
 
+密文`iEJqak3pjIaZ0NzLiITLwWTqzqGAtW2oyOTq1A3pzqas`
+加密程序为
+```php
+function encode($str){
+	$_o = strrev($str);
+	for($_0 = 0; $_0 < strlen($_o); $_0++){
+		$_c = substr($_o, $_0, 1);
+		$__ = ord($_c) + 1;
+		$_c = chr($__);
+		$_ = $_.$_c;
+	}
+	return str_rot13(strrev(base64_encode($_)));
+}
+```
+解密程序
+```php
+$s = "iEJqak3pjIaZ0NzLiITLwWTqzqGAtW2oyOTq1A3pzqas"; 
+function decode($str){
+    $_s = base64_decode(strrev(str_rot13($str)));
+    for($_0 = 0; $_0 < strlen($_s); $_0 ++){
+        $_c = substr($_s, $_0, 1);
+        $__ = ord($_c) - 1;
+        $_c = chr($__);
+        $_ = $_.$_c;
+    }
+    return strrev($_);
+}
+```
+
+###mixed_base64
+用之前 n次base64 的代码就能解
+
+###异性相吸
+将明文和密文的十六进制值进行异或
+将异或出来的值转为16进制
+将16进制的值转为ASCII的到flag
+
+###MD5
+```python
+import hashlib
+
+src1 = "TASC"
+src2 = "O3RJMV"
+src3 = "WDJKX"
+src4 = "ZM"
+file = open('1.txt', 'w')
+dic = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+       'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+for i in range(36):
+    for j in range(36):
+        for k in range(36):
+            src = src1 + dic[i] + src2 + dic[j] + src3 + dic[k] + src4
+            # print src
+            m2 = hashlib.md5()
+            m2.update(src)
+            # print m2.hexdigest()
+            file.write(src)
+            file.write("\n")
+            file.write(m2.hexdigest())
+            file.write("\n")
+file.close()
+```
+然后用正则表达式去查找`e9032[0-9a-f]{3}da[0-9a-f]{3}08[0-9a-f]{4}911513[0-9a-f]0[0-9a-f]{3}a2`得到最后的值
+
+#MISC
+
+###easy wireshark
+632号包请求 flag.php
+634返回包中就有flag
+
+###wireshark 2
+一开始错误的认为flag在flag.zip文件里面，导致浪费了很多时间，
+实际上根本就不在里面，通过http过滤的可以导出一个secret.txt文件，这个很明显是密码文件。
+通过一个大神的提示，要找另外一个zip文件，搜索504b0304 hex
+在1139行发现另外一个zip，里面有个flag。zip，确定就是这个，拷贝出来之后，命名为flag.zip
+但是打不开，用winrar修复一下，即可。rebuilt.flag.zip
+然后用密码ZipYourMouth
+解压得到flag
